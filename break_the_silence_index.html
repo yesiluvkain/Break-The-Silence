@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Break the Silence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --lavender:#E9D9F7;
+      --cream:#FFF7EE;
+      --soft-blue:#D8EEFF;
+      --accent:#7E5FA8;
+      --muted:#6B6B6B;
+      --card-bg: rgba(255,255,255,0.85);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;}
+    body{
+      background: linear-gradient(180deg,var(--lavender) 0%, var(--cream) 60%);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.45;
+    }
+    .site-wrap{max-width:980px;margin:0 auto;padding:40px 22px;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent), #B392D6);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:20px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+    h1{font-size:28px;margin:0;color:#3b2b56}
+    nav{display:none}
+    .hero{margin-top:32px;background:var(--card-bg);padding:24px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(92,72,126,0.06)}
+    .hero p{margin:10px 0 0;color:var(--muted)}
+    .cta{margin-top:18px;display:flex;gap:10px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:600;cursor:pointer}
+    .btn.ghost{background:transparent;border:1px solid rgba(124,96,160,0.15);color:#3b2b56}
+
+    section{margin-top:28px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .card{background:var(--card-bg);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+    .card h3{margin:0 0 8px}
+    .muted{color:var(--muted);font-size:14px}
+    .org-list{display:flex;flex-direction:column;gap:12px}
+    .org{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.82));border:1px solid rgba(124,96,160,0.06)}
+    .org a{color:var(--accent);font-weight:600;text-decoration:none}
+    footer{margin-top:36px;padding:18px;border-radius:10px;background:transparent;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:820px){
+      .grid{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start}
+      .logo{width:48px;height:48px}
+    }
+
+    /* subtle anim */
+    .fade-up{opacity:0;transform:translateY(12px);transition:all 600ms cubic-bezier(.2,.9,.2,1)}
+    .visible{opacity:1;transform:translateY(0)}
+
+    /* socials */
+    .socials{display:flex;gap:8px;align-items:center}
+    .socials a{color:var(--muted);text-decoration:none;font-weight:600}
+    .tag{background:rgba(255,255,255,0.6);padding:6px 10px;border-radius:999px;border:1px solid rgba(0,0,0,0.03)}
+  </style>
+</head>
+<body>
+  <div class="site-wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">BS</div>
+        <div>
+          <h1>Break the Silence</h1>
+          <div class="small muted">Awareness • Prevention • Support</div>
+        </div>
+      </div>
+      <div class="socials">
+        <div class="tag">Created by <strong>Kain Yves</strong></div>
+        <a href="https://www.instagram.com/yesiluvkain" target="_blank" rel="noopener noreferrer">@yesiluvkain</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero fade-up">
+        <h2>We stand with survivors. We educate to prevent harm.</h2>
+        <p>Break the Silence is a gentle space to learn about grooming and exploitation, find support resources, and discover practical ways to protect yourself and others.</p>
+        <div class="cta">
+          <button class="btn" onclick="document.getElementById('learn').scrollIntoView({behavior:'smooth'})">Learn More</button>
+          <a class="btn ghost" href="#support">Support Survivors</a>
+        </div>
+      </section>
+
+      <section id="learn" class="fade-up">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <h2>Learn — Signs & Prevention</h2>
+        </div>
+        <div class="grid" style="margin-top:12px">
+          <div class="card">
+            <h3>What is grooming?</h3>
+            <p class="muted">Grooming is a process predators use to gain trust and manipulate young people to exploit them. It can happen in-person and online, and often starts with seeming kindness or attention.</p>
+            <ul style="margin-top:8px">
+              <li>Unusual secrecy about conversations or friendships</li>
+              <li>Someone asking for private photos or personal information</li>
+              <li>Rapid escalation of intimacy, gifts, or favors</li>
+              <li>Pressure to keep the relationship a secret</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>How to protect yourself & others</h3>
+            <ul style="margin-top:8px" class="muted">
+              <li>Keep privacy settings strong on social platforms and never share personal location details.</li>
+              <li>Be cautious with strangers online — verify identities before trusting them.</li>
+              <li>Talk openly with a trusted adult if anything feels wrong. You won’t get in trouble for asking for help.</li>
+              <li>Save evidence (screenshots, messages) and reach out to authorities or hotlines if you or someone you know is in danger.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="support" class="fade-up">
+        <h2>Support Survivors — Verified Organizations</h2>
+        <p class="muted">Below are trusted organizations doing critical work. If you can, consider donating or sharing their resources.</p>
+        <div class="org-list" style="margin-top:12px">
+          <div class="org">
+            <strong>Polaris Project</strong>
+            <div class="muted">Operates the U.S. National Human Trafficking Hotline and works to dismantle systems that enable trafficking.</div>
+            <div style="margin-top:6px"><a href="https://secure.polarisproject.org/donate/give-today" target="_blank" rel="noopener noreferrer">Donate to Polaris</a></div>
+          </div>
+
+          <div class="org">
+            <strong>Love146</strong>
+            <div class="muted">Focuses specifically on ending child trafficking and exploitation, providing prevention education and survivor care.</div>
+            <div style="margin-top:6px"><a href="https://donate.love146.org/campaign/654529/donate" target="_blank" rel="noopener noreferrer">Donate to Love146</a></div>
+          </div>
+
+          <div class="org">
+            <strong>International Justice Mission (IJM)</strong>
+            <div class="muted">A global organization that rescues children from slavery and trafficking and strengthens justice systems.</div>
+            <div style="margin-top:6px"><a href="https://www.ijm.org/give" target="_blank" rel="noopener noreferrer">Donate to IJM</a></div>
+          </div>
+
+          <div class="org">
+            <strong>Destiny Rescue</strong>
+            <div class="muted">Conducts child rescue missions and helps survivors rebuild through rehabilitation and education.</div>
+            <div style="margin-top:6px"><a href="https://www.destinyrescue.org/donate" target="_blank" rel="noopener noreferrer">Donate to Destiny Rescue</a></div>
+          </div>
+
+          <div class="org">
+            <strong>Shared Hope International</strong>
+            <div class="muted">Prevents child sex trafficking and supports survivors through advocacy and restorative care programs.</div>
+            <div style="margin-top:6px"><a href="https://sharedhope.org/donate" target="_blank" rel="noopener noreferrer">Donate to Shared Hope</a></div>
+          </div>
+
+          <div class="org">
+            <strong>Safe House Project</strong>
+            <div class="muted">Creates safe houses for survivors of child sex trafficking and supports recovery and reintegration.</div>
+            <div style="margin-top:6px"><a href="https://www.safehouseproject.org/donate" target="_blank" rel="noopener noreferrer">Donate to Safe House Project</a></div>
+          </div>
+
+          <div class="org">
+            <strong>Selah Freedom</strong>
+            <div class="muted">Operates prevention, outreach, and residential programs helping survivors find freedom and restoration.</div>
+            <div style="margin-top:6px"><a href="https://selahfreedom.com/donate" target="_blank" rel="noopener noreferrer">Donate to Selah Freedom</a></div>
+          </div>
+
+          <div class="org">
+            <strong>Thorn (Digital Defenders of Children)</strong>
+            <div class="muted">Builds technology to detect, remove, and prevent child sexual abuse and trafficking online.</div>
+            <div style="margin-top:6px"><a href="https://www.thorn.org/donate" target="_blank" rel="noopener noreferrer">Donate to Thorn</a></div>
+          </div>
+
+          <div class="org">
+            <strong>Unlikely Heroes</strong>
+            <div class="muted">Rescues and restores children from sex slavery around the world, providing long-term care and education.</div>
+            <div style="margin-top:6px"><a href="https://unlikelyheroes.com/donate" target="_blank" rel="noopener noreferrer">Donate to Unlikely Heroes</a></div>
+          </div>
+
+          <div class="org">
+            <strong>International Centre for Missing & Exploited Children (ICMEC)</strong>
+            <div class="muted">Works globally to combat child exploitation and trafficking through policy, training, and advocacy.</div>
+            <div style="margin-top:6px"><a href="https://www.icmec.org/donate-now" target="_blank" rel="noopener noreferrer">Donate to ICMEC</a></div>
+          </div>
+
+          <div class="org">
+            <strong>FAIR Girls</strong>
+            <div class="muted">Prevents the exploitation of girls through trauma-informed care, advocacy, and survivor services.</div>
+            <div style="margin-top:6px"><a href="https://fairgirls.org/donate" target="_blank" rel="noopener noreferrer">Donate to FAIR Girls</a></div>
+          </div>
+
+          <div class="org">
+            <strong>Tahirih Justice Center</strong>
+            <div class="muted">Provides legal, social, and policy advocacy for immigrant women and girls fleeing gender-based violence, including trafficking.</div>
+            <div style="margin-top:6px"><a href="https://www.tahirih.org/give" target="_blank" rel="noopener noreferrer">Donate to Tahirih Justice Center</a></div>
+          </div>
+
+          <div class="org">
+            <strong>Sentinel Foundation</strong>
+            <div class="muted">Specializes in countering child trafficking and exploitation through crisis response and awareness.</div>
+            <div style="margin-top:6px"><a href="https://foundationsentinel.org/" target="_blank" rel="noopener noreferrer">Donate to Sentinel Foundation</a></div>
+          </div>
+
+          <div class="org">
+            <strong>Association for the Recovery of Children (ARC)</strong>
+            <div class="muted">Assists in the safe recovery of missing, exploited, and trafficked children both domestically and abroad.</div>
+            <div style="margin-top:6px"><a href="https://www.recoveryofchildren.org/" target="_blank" rel="noopener noreferrer">Donate to ARC</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="involved" class="fade-up">
+        <h2>Get Involved</h2>
+        <div class="grid" style="margin-top:10px">
+          <div class="card">
+            <h3>Share & educate</h3>
+            <p class="muted">Use your social platforms to share verified resources. Post facts, hotline numbers, and links to organizations. Be clear and kind when you call out harmful behavior.</p>
+          </div>
+          <div class="card">
+            <h3>Offline action</h3>
+            <p class="muted">Volunteer with local charities, support shelters, or fundraise for survivor services. Every small action helps.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="fade-up">
+        <h2>About</h2>
+        <div class="card" style="margin-top:12px">
+          <h3>Our purpose</h3>
+          <p class="muted">Break the Silence exists to give people clear, gentle information about how predators operate, to help survivors find trusted support, and to encourage communities to protect young people through education and care.</p>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Why I Made This Website</h3>
+          <p class="muted">"Break the Silence" was created after I learned about disturbing incidents of grooming and exploitation involving people in online communities. Seeing how easily trust can be abused made me realize how many young people are affected by predators — and how few know how to protect themselves or where to find help. This site exists to <strong>spread awareness</strong>, <strong>educate</strong>, and <strong>support survivors</strong>. My goal is to help others recognize the warning signs and to remind every victim that they are not alone, and healing is always possible.</p>
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="small">© <span id="year"></span> Break the Silence • Created by Kain Yves</div>
+      <div class="small">Instagram: <a href="https://www.instagram.com/yesiluvkain" target="_blank" rel="noopener noreferrer">@yesiluvkain</a></div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // reveal on scroll
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add('visible');
+      })
+    },{threshold:0.15});
+    document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>
